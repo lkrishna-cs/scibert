@@ -2,13 +2,17 @@
 
 #
 # edit these variables before running script
-DATASET='ebmnlp'
-TASK='pico'
+#DATASET='ebmnlp'
+#TASK='pico'
+DATASET='bc5cdr'
+TASK='ner'
 with_finetuning='' #'_finetune'  # or '' for not fine tuning
 dataset_size=38124
 
-export BERT_VOCAB=/net/nfs.corp/s2-research/scibert/scibert_scivocab_uncased/vocab.txt
-export BERT_WEIGHTS=/net/nfs.corp/s2-research/scibert/scibert_scivocab_uncased/weights.tar.gz
+#export BERT_VOCAB=/net/nfs.corp/s2-research/scibert/scibert_scivocab_uncased/vocab.txt
+#export BERT_WEIGHTS=/net/nfs.corp/s2-research/scibert/scibert_scivocab_uncased/weights.tar.gz
+export BERT_VOCAB=/Users/username/git/scibert/scibert_scivocab_uncased/vocab.txt
+export BERT_WEIGHTS=/Users/username/git/scibert/scibert_scivocab_uncased/weights.tar.gz
 
 export DATASET_SIZE=$dataset_size
 
@@ -26,10 +30,9 @@ export TRAIN_PATH=data/$TASK/$DATASET/train.txt
 export DEV_PATH=data/$TASK/$DATASET/dev.txt
 export TEST_PATH=data/$TASK/$DATASET/test.txt
 
-export CUDA_DEVICE=0
+export CUDA_DEVICE=-1
 
 export GRAD_ACCUM_BATCH_SIZE=32
 export NUM_EPOCHS=75
 export LEARNING_RATE=0.001
-
 python -m allennlp.run train $CONFIG_FILE  --include-package scibert -s "$@"

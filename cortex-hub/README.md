@@ -1,11 +1,9 @@
-# Example template
-This is a template for creating `<NAME>`.
-
-If a `README.md` is not provided we'll generate a view from `metadata.yaml`
+# SciBert Model
+A set of NLP models trained on scientific text.
 
 ## Assets
-* Sample Dataset
-* [certifai/](certifai/) - Certifai scan
+* [NER Model](https://xpa-hub.s3.amazonaws.com/scibert/model.tar.gz) - Model
+* [certifai/](certifai/) - Trust Index
 
 ## Usage
 Use of this asset in unrestricted

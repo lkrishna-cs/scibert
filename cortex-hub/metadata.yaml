@@ -20,7 +20,7 @@ contributor:
 assets:
   - type: model
     name: NER Model
-    location: ../models/ner/model.tar.gz
+    location: https://xpa-hub.s3.amazonaws.com/scibert/model.tar.gz
   - type: certifai-scan
     name: Certifai Scan
     location: certifai/certifai.yaml
